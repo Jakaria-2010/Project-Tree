@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    
+    <div class="login-box">
+        
+        <h2>Admin Login</h2>
+        
+        <input type="email" id="email" placeholder="Email">
+        
+        <input type="password" id="password" placeholder="Password">
+        
+        <button onclick="login()">
+            Login
+        </button>
+        
+        <p id="error"></p>
+        
+    </div>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+        
+        import {
+            getAuth,
+            signInWithEmailAndPassword
+        }
+        from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyD9NoaOrtABI63unHmcDHMpK6Kwv4KfqHI",
+            authDomain: "organic-food-jakaria.firebaseapp.com",
+            projectId: "organic-food-jakaria",
+            storageBucket: "organic-food-jakaria.firebasestorage.app",
+            messagingSenderId: "283724929228",
+            appId: "1:283724929228:web:9693d5a5bcc7d41a1d4a69"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        
+        const auth = getAuth(app);
+        
+        window.login = async function() {
+            
+            const email = document.getElementById("email").value.trim();
+            
+            const password = document.getElementById("password").value;
+            
+            try {
+                
+                await signInWithEmailAndPassword(auth, email, password);
+                
+                window.location.href = "admin.html";
+                
+            }
+            
+            catch (error) {
+                
+                document.getElementById("error").innerText = "Wrong email or password.";
+                
+            }
+            
+        }
+    </script>
+    
+</body>
+
+</html>

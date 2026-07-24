@@ -1,0 +1,123 @@
+ <!DOCTYPE html>
+ <html>
+ 
+ <head>
+  <title>Organic Food Checkout</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="css/checkout.css">
+ </head>
+ 
+ <body>
+  
+  <div class="box">
+   
+   <h2>🌿 Organic Food Checkout</h2>
+   
+   <h3>Your Cart</h3>
+   
+   <div id="cartItems"></div>
+   
+   <p style="font-size:18px;font-weight:bold;">
+    Total: ৳<span id="totalPrice">0</span>
+   </p>
+   
+   <hr>
+   
+   <h3>Delivery Information</h3>
+   
+   <input id="name" type="text" class="input-box" placeholder="Your Name"><br><br>
+   <input id="phone" type="text" class="input-box" placeholder="Phone Number"><br><br>
+   <textarea id="address" class="input-box" rows="4" placeholder="Enter Your Full Address"></textarea>
+   
+   <br><br>
+   
+   <div class="method">bKash (Demo)</div>
+   <div class="method">Nagad (Demo)</div>
+   <div class="method">Card (Demo)</div>
+   
+   <br>
+   
+   <button class="order-btn" onclick="placeOrder()">
+    Place Order
+   </button>
+   
+   <p><b>Note:</b> Demo website only.</p>
+   
+   <a href="index.html">← Back</a>
+   
+  </div>
+  
+  <!-- ================= SUCCESS MODAL ================= -->
+  
+  <div id="successModal" class="successModal">
+   
+   <div class="successBox">
+    
+    <div class="successIcon">
+     ✅
+    </div>
+    
+    <h2>Order Confirmed!</h2>
+    
+    <p class="thankYou">
+     Thank you for shopping with us.
+    </p>
+    
+    <hr>
+    
+    <h3>Order ID</h3>
+    
+    <div class="orderIdBox">
+     
+     <span id="successOrderId"></span>
+     
+     <button id="copyBtn">
+      📋 Copy
+     </button>
+     
+    </div>
+    
+    <div class="summary">
+     
+     <p><b>Customer:</b>
+      <span id="successCustomer"></span>
+     </p>
+     
+     <p><b>Total:</b>
+      ৳<span id="successTotal"></span></p>
+     
+     <p><b>Status:</b>
+      
+      <span class="pendingStatus">
+      
+       🟡 Pending
+       
+      </span>
+      
+     </p>
+     
+    </div>
+    
+    <div class="successButtons">
+     
+     <button id="receiptBtn">
+      📄 Download Receipt
+     </button>
+     
+     <button id="homeBtn">
+      🏠 Back to Home
+     </button>
+     
+    </div>
+    
+   </div>
+   
+  </div>
+  
+  <script type="module" src="js/checkout.js"></script>
+  
+ </body>
+ 
+ </html>
